@@ -18,8 +18,11 @@ const config: Config = {
     },
   },
   coverageProvider: 'babel',
-  testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./jest.setup.ts'],
+  testEnvironment: '<rootDir>/jsdom-extended.js',
+  moduleNameMapper: {
+    '\\.(css)$': '<rootDir>/__mocks__/styleMock.js',
+  },
 };
 
 export default config;

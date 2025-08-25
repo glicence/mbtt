@@ -1,0 +1,89 @@
+{
+  "categories": [
+    {
+      "name": "Investing1",
+      "id": "1",
+      "products": [
+        {
+          "name": "Stocks & Shares ISA",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "US Stocks",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "Fund Range",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "General Investment Account",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "Junior ISA",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "name": "Saving",
+      "id": "2",
+      "products": [
+        {
+          "name": "Cash ISA",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "32 Day Notice",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        },
+        {
+          "name": "95 Day Notice",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "name": "Home-buying",
+      "id": "3",
+      "products": [
+        {
+          "name": "Home-buying with Moneybox",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "name": "Retirement",
+      "id": "4",
+      "products": [
+        {
+          "name": "Personal Pension",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "id": "5",
+      "products": [
+        {
+          "name": "Business Saver",
+          "icon": "icon.svg",
+          "description": "Lorem ipsum"
+        }
+      ]
+    }
+  ]
+}
