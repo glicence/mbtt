@@ -1,0 +1,12 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category {
+  width: 100%;
+}
+
+.error {
+  color: #f00;
+}

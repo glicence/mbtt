@@ -10,8 +10,21 @@ export default defineConfig([
     plugins: { js },
     extends: ['js/recommended'],
     languageOptions: { globals: globals.browser },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  globalIgnores(['*.d.ts', 'babel.config.js']),
+  globalIgnores([
+    '*.d.ts',
+    'babel.config.js',
+    'jest.setup.ts',
+    'jsdom-extended.js',
+    'coverage/*',
+    '__mocks__/*',
+    '.next/*',
+  ]),
 ]);

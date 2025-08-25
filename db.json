@@ -1,32 +1,32 @@
 {
   "categories": [
     {
-      "name": "Investing1",
+      "name": "Investing",
       "id": "1",
       "products": [
         {
           "name": "Stocks & Shares ISA",
-          "icon": "icon.svg",
-          "description": "Lorem ipsum"
+          "icon": "general_investment_account.svg",
+          "description": "Lorem ipsumss"
         },
         {
           "name": "US Stocks",
-          "icon": "icon.svg",
+          "icon": "simple_saver.svg",
           "description": "Lorem ipsum"
         },
         {
           "name": "Fund Range",
-          "icon": "icon.svg",
+          "icon": "personal_pension.svg",
           "description": "Lorem ipsum"
         },
         {
           "name": "General Investment Account",
-          "icon": "icon.svg",
+          "icon": "open_access_cash_isa.svg",
           "description": "Lorem ipsum"
         },
         {
           "name": "Junior ISA",
-          "icon": "icon.svg",
+          "icon": "lifetime_isa.svg",
           "description": "Lorem ipsum"
         }
       ]
@@ -37,17 +37,17 @@
       "products": [
         {
           "name": "Cash ISA",
-          "icon": "icon.svg",
+          "icon": "cash_isa.svg",
           "description": "Lorem ipsum"
         },
         {
           "name": "32 Day Notice",
-          "icon": "icon.svg",
+          "icon": "32_day_notice.svg",
           "description": "Lorem ipsum"
         },
         {
           "name": "95 Day Notice",
-          "icon": "icon.svg",
+          "icon": "95_day_notice.svg",
           "description": "Lorem ipsum"
         }
       ]
@@ -58,8 +58,13 @@
       "products": [
         {
           "name": "Home-buying with Moneybox",
-          "icon": "icon.svg",
+          "icon": "simple_saver.svg",
           "description": "Lorem ipsum"
+        },
+        {
+          "name": "wefge",
+          "icon": "stocks_shares_isa.svg",
+          "description": "qwdf"
         }
       ]
     },
@@ -69,7 +74,7 @@
       "products": [
         {
           "name": "Personal Pension",
-          "icon": "icon.svg",
+          "icon": "simple_saver.svg",
           "description": "Lorem ipsum"
         }
       ]
@@ -80,7 +85,7 @@
       "products": [
         {
           "name": "Business Saver",
-          "icon": "icon.svg",
+          "icon": "lifetime_isa.svg",
           "description": "Lorem ipsum"
         }
       ]

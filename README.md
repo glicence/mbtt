@@ -14,7 +14,15 @@ npm install
 npm run dev
 ```
 
+In a separate terminal
+
+```bash
+npm run dev:server
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+A development [json-server](https://www.npmjs.com/package/json-server) is available on [http://localhost:4000](http://localhost:4000)
 
 ### Tests
 
