@@ -274,9 +274,7 @@ export const Category = ({
           )}
         </>
       ) : (
-        <>
-          <CategoryDetails category={category} />
-        </>
+        <CategoryDetails category={category} />
       )}
     </div>
   );
