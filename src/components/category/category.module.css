@@ -9,9 +9,47 @@
 }
 
 .product {
-  width: 33%;
+  width: 100%;
 }
 
 .error {
-  color: #f00;
+  color: var(--error);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing);
+}
+
+.formLabel {
+  width: 100%;
+  margin-bottom: var(--spacing2);
+}
+
+.formSelect {
+  margin-left: var(--spacing);
+  font-size: 16px;
+}
+
+.formOption {
+  font-size: 16px;
+}
+
+.formInput {
+  width: 100%;
+  font-size: 16px;
+}
+
+.productFields {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: solid 2px var(--dark-green);
+  padding: var(--spacing) 0;
+  margin-bottom: var(--spacing);
 }

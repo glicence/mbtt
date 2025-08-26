@@ -1,0 +1,129 @@
+:root {
+  --teal: #78e3df;
+  --dark-green: #022828;
+  --seafoam: #e9f1ef;
+  --light: rgb(251, 254, 253);
+  --error: #f00;
+  --spacing: 8px;
+  --spacing2: 16px;
+}
+
+@font-face {
+  font-family: 'Orla Sprig';
+  src:
+    local('Orla Sprig Medium'),
+    local('Orla-Sprig-Medium'),
+    url('/fonts/Orla-Sprig-Medium.woff2') format('woff2'),
+    url('/fonts/Orla-Sprig-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orla Sprig Sans';
+  src:
+    local('Orla Sprig Sans Medium'),
+    local('OrlaSprigSans-Medium'),
+    url('/fonts/OrlaSprigSans-Medium.woff2') format('woff2'),
+    url('/fonts/OrlaSprigSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orla Sprig Sans';
+  src:
+    local('Orla Sprig Sans Heavy'),
+    local('OrlaSprigSans-Heavy'),
+    url('/fonts/OrlaSprigSans-Heavy.woff2') format('woff2'),
+    url('/fonts/OrlaSprigSans-Heavy.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orla Sprig Sans';
+  src:
+    local('Orla Sprig Sans Light'),
+    local('OrlaSprigSans-Light'),
+    url('/fonts/OrlaSprigSans-Light.woff2') format('woff2'),
+    url('/fonts/OrlaSprigSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font:
+    100 18px / 1.4 'Orla Sprig Sans',
+    BlinkMacSystemFont,
+    -apple-system,
+    'Segoe UI',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  color: var(--dark-green);
+  background-color: var(--light);
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* <button class="button-3" role="button">Button 3</button> */
+
+.button {
+  appearance: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button.edit {
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+}
+
+.button.delete {
+  background-color: #a42e3c;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+}

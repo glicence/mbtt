@@ -7,7 +7,7 @@
         {
           "name": "Stocks & Shares ISA",
           "icon": "general_investment_account.svg",
-          "description": "Lorem ipsumss"
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
           "name": "US Stocks",
@@ -17,7 +17,7 @@
         {
           "name": "Fund Range",
           "icon": "personal_pension.svg",
-          "description": "Lorem ipsum"
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
           "name": "General Investment Account",
@@ -38,7 +38,7 @@
         {
           "name": "Cash ISA",
           "icon": "cash_isa.svg",
-          "description": "Lorem ipsum"
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
           "name": "32 Day Notice",
@@ -59,7 +59,7 @@
         {
           "name": "Home-buying with Moneybox",
           "icon": "simple_saver.svg",
-          "description": "Lorem ipsum"
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         },
         {
           "name": "wefge",
@@ -74,7 +74,7 @@
       "products": [
         {
           "name": "Personal Pension",
-          "icon": "simple_saver.svg",
+          "icon": "personal_pension.svg",
           "description": "Lorem ipsum"
         }
       ]
@@ -86,7 +86,7 @@
         {
           "name": "Business Saver",
           "icon": "lifetime_isa.svg",
-          "description": "Lorem ipsum"
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         }
       ]
     }

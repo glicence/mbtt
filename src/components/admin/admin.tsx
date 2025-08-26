@@ -39,20 +39,37 @@ export const Admin = ({ data }: { data: Data }) => {
 
   return (
     <>
-      <h1>Admin</h1>
+      <h1 className={styles.heading}>
+        <span className="visually-hidden">Moneybox</span>
+        <a href="https://www.moneyboxapp.com/?" id="logo">
+          <img
+            width="320"
+            src="https://www.moneyboxapp.com/wp-content/uploads/2024/11/MB-logo-400x92-1.svg"
+            alt="Moneybox"
+          />
+        </a>
+      </h1>
 
       <div className={styles.categories}>
-        {categories.map((category) => (
+        <h2 className={styles.subheading}>Admin</h2>
+        <p>Manage, edit and add new categories and products</p>
+
+        {categories.map((category, index) => (
           <div key={category.id} className={styles.category}>
-            <Category category={category} />
-            <button onClick={() => removeCategory(category.id)}>Remove</button>
+            <h2>Category {index + 1}</h2>
+
+            <Category category={category} removeCategory={removeCategory} />
           </div>
         ))}
+
+        <div className={styles.add}>
+          <button onClick={addCategory} className="button edit">
+            Add category
+          </button>
+
+          <p className={styles.error}>{error}</p>
+        </div>
       </div>
-
-      <button onClick={addCategory}>Add category</button>
-
-      <p className={styles.error}>{error}</p>
     </>
   );
 };

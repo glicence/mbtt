@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Category as CategoryType, Product } from '../../../types';
 
 import styles from './category.module.css';
+import { CategoryDetails } from '../CategoryDetails/category-details';
 
 type FieldProps = {
   value: string;
@@ -10,21 +11,28 @@ type FieldProps = {
 };
 
 const Field = ({ value, onChange, id }: FieldProps) => (
-  <input value={value} onChange={onChange} id={id} />
+  <input
+    value={value}
+    onChange={onChange}
+    id={id}
+    className={styles.formInput}
+  />
 );
 
 const IconOptions = () => (
   <>
-    <option>stocks_shares_isa.svg</option>
-    <option>simple_saver.svg</option>
-    <option>personal_pension.svg</option>
-    <option>open_access_cash_isa.svg</option>
-    <option>lifetime_isa.svg</option>
-    <option>junior_isa.svg</option>
-    <option>general_investment_account.svg</option>
-    <option>cash_isa.svg</option>
-    <option>95_day_notice.svg</option>
-    <option>32_day_notice.svg</option>
+    <option className={styles.formOption}>stocks_shares_isa.svg</option>
+    <option className={styles.formOption}>simple_saver.svg</option>
+    <option className={styles.formOption}>personal_pension.svg</option>
+    <option className={styles.formOption}>open_access_cash_isa.svg</option>
+    <option className={styles.formOption}>lifetime_isa.svg</option>
+    <option className={styles.formOption}>junior_isa.svg</option>
+    <option className={styles.formOption}>
+      general_investment_account.svg
+    </option>
+    <option className={styles.formOption}>cash_isa.svg</option>
+    <option className={styles.formOption}>95_day_notice.svg</option>
+    <option className={styles.formOption}>32_day_notice.svg</option>
   </>
 );
 
@@ -36,8 +44,10 @@ const defaultProduct = {
 
 export const Category = ({
   category: initialCategory,
+  removeCategory,
 }: {
   category: CategoryType;
+  removeCategory: (id: string) => void;
 }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [showAddProduct, setShowAddProduct] = useState(false);
@@ -65,15 +75,24 @@ export const Category = ({
 
   return (
     <div className={styles.category}>
-      <div>
+      <div className={styles.buttons}>
         <button
           onClick={() => {
             setIsEditing(!isEditing);
             if (isEditing) setCategory(initialCategory);
           }}
+          className="button edit"
         >
           {isEditing ? 'Cancel' : 'Edit'}
         </button>
+        {!isEditing && (
+          <button
+            onClick={() => removeCategory(category.id)}
+            className="button delete"
+          >
+            Remove
+          </button>
+        )}
         {error && <p className={styles.error}>{error}</p>}
       </div>
       {isEditing ? (
@@ -83,8 +102,9 @@ export const Category = ({
               e.preventDefault();
               onSave();
             }}
+            className={styles.form}
           >
-            <label htmlFor="categoryName">
+            <label htmlFor="categoryName" className={styles.formLabel}>
               Category Name:
               <Field
                 value={category.name}
@@ -92,10 +112,12 @@ export const Category = ({
                 id="categoryName"
               />
             </label>
-
             {category.products.map((product, ind) => (
-              <div key={`product${ind}`}>
-                <label htmlFor={`product${ind}Name`}>
+              <div key={`product${ind}`} className={styles.productFields}>
+                <label
+                  htmlFor={`product${ind}Name`}
+                  className={styles.formLabel}
+                >
                   Product Name:
                   <Field
                     value={product.name}
@@ -112,7 +134,10 @@ export const Category = ({
                     id={`product${ind}Name`}
                   />
                 </label>
-                <label htmlFor={`product${ind}Description`}>
+                <label
+                  htmlFor={`product${ind}Description`}
+                  className={styles.formLabel}
+                >
                   Product Description:
                   <Field
                     value={product.description}
@@ -129,7 +154,10 @@ export const Category = ({
                     id={`product${ind}Description`}
                   />
                 </label>
-                <label htmlFor={`selectIcon${ind}`}>
+                <label
+                  htmlFor={`selectIcon${ind}`}
+                  className={styles.formLabel}
+                >
                   Icon:
                   <select
                     id={`selectIcon${ind}`}
@@ -144,11 +172,13 @@ export const Category = ({
                       );
                       setCategory({ ...category, products: updatedProducts });
                     }}
+                    className={styles.formSelect}
                   >
                     <IconOptions />
                   </select>
                 </label>
                 <button
+                  className="button delete"
                   onClick={(e) => {
                     e.preventDefault();
                     setCategory({
@@ -161,19 +191,23 @@ export const Category = ({
                 </button>
               </div>
             ))}
-            <button type="submit">save</button>
-          </form>
-
-          {!showAddProduct ? (
             <button
               onClick={() => {
                 setNewProduct(defaultProduct);
                 setShowAddProduct(true);
               }}
+              className="button edit"
+              type="button"
             >
               Add product
             </button>
-          ) : (
+            &nbsp;&nbsp;
+            <button type="submit" className="button edit">
+              save
+            </button>
+          </form>
+
+          {showAddProduct && (
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -183,8 +217,9 @@ export const Category = ({
                 });
                 setShowAddProduct(false);
               }}
+              className={styles.form}
             >
-              <label htmlFor="newProductName">
+              <label htmlFor="newProductName" className={styles.formLabel}>
                 Product Name:
                 <Field
                   value={newProduct.name}
@@ -194,7 +229,10 @@ export const Category = ({
                   id="newProductName"
                 />
               </label>
-              <label htmlFor="newProductDescription">
+              <label
+                htmlFor="newProductDescription"
+                className={styles.formLabel}
+              >
                 Product Description:
                 <Field
                   value={newProduct.description}
@@ -207,7 +245,7 @@ export const Category = ({
                   id="newProductDescription"
                 />
               </label>
-              <label htmlFor="selectIcon">
+              <label htmlFor="selectIcon" className={styles.formLabel}>
                 Icon:
                 <select
                   value={newProduct.icon}
@@ -215,6 +253,7 @@ export const Category = ({
                     setNewProduct({ ...newProduct, icon: e.target.value });
                   }}
                   id="selectIcon"
+                  className={styles.formSelect}
                 >
                   <IconOptions />
                 </select>
@@ -223,26 +262,20 @@ export const Category = ({
                 onClick={() => {
                   setShowAddProduct(false);
                 }}
+                className="button delete"
               >
                 Cancel new product
               </button>
-              <button type="submit">Add {newProduct.name}</button>
+              &nbsp;&nbsp;
+              <button type="submit" className="button edit">
+                Add {newProduct.name}
+              </button>
             </form>
           )}
         </>
       ) : (
         <>
-          <h2>{category.name}</h2>
-          <h3>Products</h3>
-          <div className={styles.products}>
-            {category.products.map((product) => (
-              <div className={styles.product} key={product.name}>
-                <h4>{product.name}</h4>
-                <img src={`/assets/${product.icon}`} />
-                <p>{product.description}</p>
-              </div>
-            ))}
-          </div>
+          <CategoryDetails category={category} />
         </>
       )}
     </div>

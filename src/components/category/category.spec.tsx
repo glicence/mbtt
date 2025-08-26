@@ -32,7 +32,7 @@ describe('Category', () => {
   afterAll(() => server.close());
 
   it('renders the component', () => {
-    render(<Category category={mockProps} />);
+    render(<Category category={mockProps} removeCategory={jest.fn()} />);
 
     expect(screen.getByText(mockProps.name)).toBeVisible();
   });
@@ -42,7 +42,12 @@ describe('Category', () => {
       { name: 'Foo', icon: 'cash_isa.svg', description: 'Lorem' },
       { name: 'Bar', icon: 'junior_isa.svg', description: 'Ipsum' },
     ];
-    render(<Category category={{ ...mockProps, products: mockProducts }} />);
+    render(
+      <Category
+        category={{ ...mockProps, products: mockProducts }}
+        removeCategory={jest.fn()}
+      />
+    );
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
@@ -88,7 +93,12 @@ describe('Category', () => {
       { name: 'Foo', icon: 'cash_isa.svg', description: 'Lorem' },
       { name: 'Bar', icon: 'junior_isa.svg', description: 'Ipsum' },
     ];
-    render(<Category category={{ ...mockProps, products: mockProducts }} />);
+    render(
+      <Category
+        category={{ ...mockProps, products: mockProducts }}
+        removeCategory={jest.fn()}
+      />
+    );
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
@@ -113,7 +123,7 @@ describe('Category', () => {
         return new HttpResponse(null, { status: 500 });
       })
     );
-    render(<Category category={mockProps} />);
+    render(<Category category={mockProps} removeCategory={jest.fn()} />);
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
@@ -141,7 +151,7 @@ describe('Category', () => {
   });
 
   it('cancels editing', async () => {
-    render(<Category category={mockProps} />);
+    render(<Category category={mockProps} removeCategory={jest.fn()} />);
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
@@ -180,13 +190,18 @@ describe('Category', () => {
       },
     ];
 
-    render(<Category category={{ ...mockProps, products: mockProducts }} />);
+    render(
+      <Category
+        category={{ ...mockProps, products: mockProducts }}
+        removeCategory={jest.fn()}
+      />
+    );
 
     expect(screen.getByText(mockProducts[0].name)).toBeVisible();
   });
 
   it('adds a product', async () => {
-    render(<Category category={mockProps} />);
+    render(<Category category={mockProps} removeCategory={jest.fn()} />);
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
@@ -233,7 +248,7 @@ describe('Category', () => {
   });
 
   it('cancels adding a product', async () => {
-    render(<Category category={mockProps} />);
+    render(<Category category={mockProps} removeCategory={jest.fn()} />);
 
     const editButton = screen.getByRole('button', { name: 'Edit' });
 
